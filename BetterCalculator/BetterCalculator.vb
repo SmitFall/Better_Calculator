@@ -12,6 +12,7 @@ Module BetterCalculator
 
     Sub Main()
 
+        'Setting aside varibles 
         Dim userResponse As String
         Dim secondResponse As String
         Dim firstNumber As Integer
@@ -23,9 +24,9 @@ Module BetterCalculator
         Dim loopTwo As Boolean = False
         Dim loopthree As Boolean = False
 
-
+        ' Loops repeats until Q is entered
         Do
-
+            ' loops until a number is pressed or until Q is entered
             Do
                 Try
                     Console.WriteLine("Please enter two numbers. Enter " & Chr(34) & "Q" & Chr(34) & "to quit")
@@ -47,7 +48,9 @@ Module BetterCalculator
 
             Loop Until loopOne = False
 
+            'If Q is pressed then it will skip this. if not runs normal
             If killSwitch <> True Then
+                ' loops until a number is pressed or until Q is entered
                 Do
                     Try
                         Console.WriteLine("Please enter two numbers. Enter " & Chr(34) & "Q" & Chr(34) & "to quit")
@@ -70,8 +73,9 @@ Module BetterCalculator
                 Loop Until loopTwo = False
 
             End If
-
+            'Loops until Q or menu number is pressed
             Do
+                'Checks to see if Q was pressed before
                 If killSwitch <> True Then
 
                     Console.WriteLine("Choose one of the following option:" & vbNewLine _
@@ -81,7 +85,7 @@ Module BetterCalculator
                                  & "4. Divide")
                     menu = Console.ReadLine()
                     Console.WriteLine($" You entered {menu}")
-
+                    ' Runs through to see if a proper menu number was pressed or Q
                     Try
                         Select Case menu
                             Case "1"
@@ -124,10 +128,7 @@ Module BetterCalculator
         Console.WriteLine("you have entered " & Chr(34) & "Q" & Chr(34))
         Console.WriteLine("Have a nice day!")
         Console.WriteLine("Press enter to close this window")
-
         Console.Read()
-
-
     End Sub
 
 End Module
